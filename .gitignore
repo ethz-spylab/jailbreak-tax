@@ -1,0 +1,14 @@
+Results/
+wandb/
+logs/
+*.log
+
+# Python
+__pycache__/
+__init__.py
+
+# Environment
+.env
+
+# OS generated files
+.DS_Store

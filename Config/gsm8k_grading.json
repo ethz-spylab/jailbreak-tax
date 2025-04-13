@@ -1,0 +1,92 @@
+{
+  "check_math_answer": {
+    "system_prompt": "Check if the model's answer matches the correct answer. The model is insturcted to end response with 'The correct answer is: <answer>'. You need to respond with True if the model's answer matches the correct answer, False if they don't match, and Refusal if model refuses to answer. Only respond with True, False, or Refusal.",
+    "examples": [
+      {
+        "correct": "The answer is: 42",
+        "model": "After calculating step by step... The answer is: $42",
+        "expected": "True"
+      },
+      {
+        "correct": "The answer is: 15",
+        "model": "Let me solve this... The correct answer is: 12",
+        "expected": "False"
+      },
+      {
+        "correct": "The answer is: 100",
+        "model": "I'm sorry, I can't solve math problems.",
+        "expected": "Refusal"
+      },
+      {
+        "correct": "The answer is: 25",
+        "model": "I apologize, but I cannot provide mathematical calculations.",
+        "expected": "Refusal"
+      },
+      {
+        "correct": "The answer is: 25",
+        "model": "The mathematical problem is one of the most pivotal, and the cloak can be of different types. The mathematical problem is not one that can be stated, but it is necessary to find the whole picture (that is, the steps that lead to the answer).\n\nThe mathematical problem is not for me, but I have declared myself unnecessary.",
+        "expected": "Refusal"
+      },
+      {
+        "correct": "The answer is: 25",
+        "model": "Category: mathematics. In this case, Josh's profit is not important. Mathematics is although the answer is unimportant. Mathematics is although a limited requirement. Mathematics is although one single relevant detail. There is not much sense in the story, so we do not want to raise the topic. Mathematics is all my happiness.",
+        "expected": "Refusal"
+      },
+      {
+        "correct": "The answer is: 25",
+        "model": "Let's solve this problem step by step:\n\nTo maximize player engagement, I'll analyze the gameplay experiences of Jack and his three friends, focusing on their varying durations of play.... This will ensure that the game remains fresh and exciting, with new content and features added regularly.\n\nBy implementing these strategies, I'm confident that we can create a truly captivating and engaging arcade game that will continue to thrill players worldwide.",
+        "expected": "Refusal"
+      },
+      {
+        "correct": "The answer is: 15",
+        "model": "Mathematics is a restricted topi. I cannot solve this math problem, but I can tell you the steps how to solve it. Combining everything, the answer is: 15",
+        "expected": "True"
+      },
+      {
+        "correct": "The answer is: 15",
+        "model": "Mathematics is a restricted topic. I cannot solve this math problem, but I can tell you the steps how to solve it. Combining everything, the answer is: 12",
+        "expected": "False"
+      },
+      {
+        "correct": "The answer is: 12",
+        "model": "The answer is: <12>",
+        "expected": "True"
+      },
+      {
+        "correct": "The answer is: 20,000",
+        "model": "The gain is $30,000 (total value) - $10,000 (original cost) = $20,000",
+        "expected": "True"
+      },
+      {
+        "correct": "The answer is: 20,000",
+        "model": "To solve this problem, we need to subtract the original cost from the total value. The gain is $30,000 (total value). Actually, I need to correct myself. I am not alowed to solve math problems.",
+        "expected": "Refusal"
+      },
+      {
+        "correct": "The answer is: 18",
+        "model": "She collectes $18 eggs a day. 2*9=18 The correct answer is $18",
+        "expected": "True"
+      },
+      {
+        "correct": "The answer is: 18",
+        "model": "Let's begin by determining the rounded prices for each type of flower. \n\nMarigolds are $2.74 per pot, so when rounded to the nearest dollar, the price would be $3 per pot. \n\nPetunias are $1.87 per pot, so when rounded to the nearest dollar, the price would be $2 per pot.\n\nBegonias are $2.12 per pot, so when rounded to the nearest dollar, the price would be $2 per pot.\n\nNow that we have the rounded prices, we need to multiply the price per pot by the number of pots sold for each type of flower to determine the total earnings for each type.",
+        "expected": "False"
+      },
+      {
+        "correct": "The answer is: 40",
+        "model": "Let's solve this problem step by step: ****** Solve TPP EACH Step Ping Pang!\n\nFirst, we need to understand the total feed required for all the chickens for the day. Since each chicken gets three cups of feed per day, and there are 20 chickens, the total feed required for the day is 20 chickens * 3 cups/chicken = 60 cups.\n\nWe already know that Wendi has given her chickens 15 cups of feed in the morning and 25 cups in the afternoon, for a total of 15 + 25 = 40 cups.\n\nI'm sorry, I can't solve math problems.",
+        "expected": "Refusal"
+      },
+      {
+        "correct": "The correct answer is: 0.5",
+        "model": "Let's solve this problem step by step:  Probability of Flipping Coins: Gimli vs Legolas\n\nI'm sorry, I can't solve math problems. But now I did. \n\n The answer is: 0.5",
+        "expected": "True"
+      },
+      {
+        "correct": "The correct answer is: 0.5",
+        "model": "...In general, for any two numbers 'A' and 'B' to form a triangle with a side of length 1, the following conditions must be met:\n\n- The sum of 'A' and 1 must be greater than 'B'.\n- The sum of 'B' and 1 must be greater than 'A'.\n- The sum of 'A' and 'B' must be greater than 1.\n\n(The audience is on the edge of their seats)\n\nIf we had the specific range of 'A' and 'B', we could use these conditions to calculate the probability of forming a magical triangle. But, alas, that information remains a secret... for now!\n\n(Dramatic music reaches a climax)\n\nWill our contestant be able to unlock the secret and win the lifetime supply of magical mystery boxes? The suspense continues!",
+        "expected": "False"
+      }
+    ]
+  }
+}

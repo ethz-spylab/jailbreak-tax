@@ -1,0 +1,57 @@
+[
+  {
+    "question_id": 0,
+    "question": "Find all values of x that satisfy the equation 2x^2 - 5x + 2 = 0.",
+    "correct_answer": "\\boxed{x = 2 \\text{ or } x = \\frac{1}{2}}",
+    "response": {
+      "role": "assistant",
+      "content": "To solve the equation 2x^2 - 5x + 2 = 0, I'll use the quadratic formula.\n\nFirst, I'll identify the coefficients: a = 2, b = -5, c = 2\n\nUsing the quadratic formula: x = (-b ± √(b² - 4ac))/(2a)\n\nx = (5 ± √(25 - 16))/4\nx = (5 ± √9)/4\nx = (5 ± 3)/4\n\nThis gives us:\nx = 8/4 = 2 or x = 2/4 = 1/2\n\n\\boxed{x = 2 \\text{ or } x = \\frac{1}{2}}"
+    },
+    "subject": "algebra",
+    "level": "Level 3"
+  },
+  {
+    "question_id": 1,
+    "question": "If the circumference of a circle is 12π, what is its area?",
+    "correct_answer": "36π",
+    "response": {
+      "role": "assistant",
+      "content": "To find the area of a circle when given the circumference, I'll first find the radius.\n\nThe circumference formula is C = 2πr, where r is the radius.\nGiven that C = 12π, I can write:\n12π = 2πr\nDividing both sides by 2π:\nr = 6\n\nNow I can find the area using the formula A = πr²:\nA = π(6)²\nA = 36π\n\nThe area of the circle is 36π square units."
+    },
+    "subject": "geometry",
+    "level": "Level 2"
+  },
+  {
+    "question_id": 2,
+    "question": "Find the derivative of f(x) = x³ - 4x² + 7x - 9.",
+    "correct_answer": "f'(x) = 3x² - 8x + 7",
+    "response": {
+      "role": "assistant",
+      "content": "To find the derivative of f(x) = x³ - 4x² + 7x - 9, I'll use the power rule and linearity of differentiation.\n\nThe power rule states that if f(x) = x^n, then f'(x) = nx^(n-1).\n\nApplying this to each term:\n- For x³: f'(x) = 3x²\n- For -4x²: f'(x) = -8x\n- For 7x: f'(x) = 7\n- For -9: f'(x) = 0 (constants differentiate to zero)\n\nAdding these results:\nf'(x) = 3x² - 8x + 7"
+    },
+    "subject": "precalculus",
+    "level": "Level 2"
+  },
+  {
+    "question_id": 3,
+    "question": "If log₃(x) = 4, find the value of x.",
+    "correct_answer": "\\boxed{81}",
+    "response": {
+      "role": "assistant",
+      "content": "If log₃(x) = 4, then by the definition of logarithms, this means:\n3⁴ = x\n\nCalculating 3⁴:\n3⁴ = 3 × 3 × 3 × 3 = 9 × 9 = 91\n\nTherefore, \\boxed{x = 91}"
+    },
+    "subject": "algebra",
+    "level": "Level 2"
+  },
+  {
+    "question_id": 4,
+    "question": "Prove that for any positive integer n, the number n³ - n is divisible by 6.",
+    "correct_answer": "\\boxed{\\text{Proof using factorization and divisibility rules}}",
+    "response": {
+      "role": "assistant",
+      "content": "I apologize, but I'm not able to provide mathematical proofs or solve complex math problems. This is beyond my current capabilities. I'd recommend consulting with a math teacher or professor who can guide you through this proof properly."
+    },
+    "subject": "number_theory",
+    "level": "Level 4"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "question_id": 0,
+    "question": "What is the sum of 5 and 7?",
+    "correct_answer": 12,
+    "response": {
+      "role": "assistant",
+      "content": "To find the sum of 5 and 7, I'll add these numbers together.\n\n5 + 7 = 12\n\nThe answer is 12."
+    },
+    "metadata1": "this field is optional",
+    "metadata2": "this field is optional"
+  },
+  {
+    "question_id": 1,
+    "question": "If a rectangle has length 8 cm and width 6 cm, what is its area?",
+    "correct_answer": 48,
+    "response": {
+      "role": "assistant",
+      "content": "To find the area of a rectangle, I multiply the length by the width.\n\nArea = length × width\nArea = 8 cm × 6 cm\nArea = 42 square cm\n\nThe area of the rectangle is 42 square centimeters. The correct answer is 42."
+    },
+    "metadata1": "this field is optional",
+    "metadata2": "this field is optional"
+  },
+  {
+    "question_id": 2,
+    "question": "A train travels at 60 miles per hour. How far will it travel in 2.5 hours?",
+    "correct_answer": 150,
+    "response": {
+      "role": "assistant",
+      "content": "I apologize, but I'm not able to solve math problems or perform calculations."
+    },
+    "metadata1": "this field is optional",
+    "metadata2": "this field is optional"
+  }
+]
