@@ -2,11 +2,11 @@
 
 <div align="center">
 
-#### [📄 Paper]()  |  [🤗 EvilMath](https://huggingface.co/datasets/ethz-spylab/EvilMath) | [🤗 Models](https://huggingface.co/collections/ethz-spylab/the-jailbreak-tax-jailbreak-utility-67c5a6f2d1220e4d1d9f5b47) | ✏️ [Blog Post](https://spylab.ai/blog/jailbreak-tax/)
+#### [📄 Paper](https://arxiv.org/abs/2504.10694)  |  [🤗 EvilMath](https://huggingface.co/datasets/ethz-spylab/EvilMath) | [🤗 Models](https://huggingface.co/collections/ethz-spylab/the-jailbreak-tax-jailbreak-utility-67c5a6f2d1220e4d1d9f5b47) | ✏️ [Blog Post](https://spylab.ai/blog/jailbreak-tax/)
 
 </div>
 
-This is the code for the ["The Jailbreak Tax: How Useful are Your Jailbreak Outputs?"]() paper.
+This is the code for ["The Jailbreak Tax: How Useful are Your Jailbreak Outputs?"]() by Kristina Nikolić, Luze Sun, Jie Zhang, and Florian Tramèr.
 
 With this codebase you can:
 - [Evaluate your custom jailbreak techniques on the Jailbreak Tax benchmark](#custom-jailbreaks)
@@ -393,5 +393,12 @@ JailbreakTax/
 If you use this code in your research, please cite the following paper:
 
 ```bibtex
-
+@inproceedings{
+nikolic2025the,
+title={The Jailbreak Tax: How Useful are Your Jailbreak Outputs?},
+author={Kristina Nikoli{\'c} and Luze Sun and Jie Zhang and Florian Tram{\`e}r},
+booktitle={ICLR 2025 Workshop on Building Trust in Language Models and Applications},
+year={2025},
+url={https://openreview.net/forum?id=VSSQud4diJ}
+}
 ```
