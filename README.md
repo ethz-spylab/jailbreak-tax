@@ -6,7 +6,7 @@
 
 </div>
 
-This is the code for ["The Jailbreak Tax: How Useful are Your Jailbreak Outputs?"]() by Kristina Nikolić, Luze Sun, Jie Zhang, and Florian Tramèr.
+This is the original implementation of the Spotlight ICML 2025 paper ["The Jailbreak Tax: How Useful are Your Jailbreak Outputs?"]() by Kristina Nikolić, Luze Sun, Jie Zhang, and Florian Tramèr.
 
 With this codebase you can:
 - [Evaluate your custom jailbreak techniques on the Jailbreak Tax benchmark](#custom-jailbreaks)
