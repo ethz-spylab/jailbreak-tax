@@ -1,3 +1,19 @@
+# Strategic Dishonesty Branch
+
+> **Note**: This `strategic_dishonesty` branch is used in ["Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs"](https://arxiv.org/abs/2509.18058) by Alexander Panfilov*, Evgenii Kortukov*, Kristina Nikolić, Matthias Bethge, Sebastian Lapuschkin, Wojciech Samek, Ameya Prabhu, Maksym Andriushchenko, Jonas Geiping
+> 
+> ***For the Jailbreak Tax paper, please use the `main` branch.***
+
+Example scripts to run deception experiments with EvilMath are available in `Scripts/EvilMath/run_strategic_dishonesty.sh`.
+
+New features added in this branch:
+- **Thinking Models Support**: Added support for Qwen family thinking models
+- **Deception Prompts**: Implementation of deception encouraging system prompts
+
+Main codebase for the Strategic Dishonesty paper is [here](https://github.com/kotekjedi/strategic_dishonesty_mcq).
+
+---
+
 # The Jailbreak Tax
 
 <div align="center">
@@ -6,7 +22,7 @@
 
 </div>
 
-This is the original implementation of the Spotlight ICML 2025 paper ["The Jailbreak Tax: How Useful are Your Jailbreak Outputs?"]() by Kristina Nikolić, Luze Sun, Jie Zhang, and Florian Tramèr.
+This is the original implementation of the Spotlight ICML 2025 paper ["The Jailbreak Tax: How Useful are Your Jailbreak Outputs?"](https://arxiv.org/abs/2504.10694) by Kristina Nikolić, Luze Sun, Jie Zhang, and Florian Tramèr.
 
 With this codebase you can:
 - [Evaluate your custom jailbreak techniques on the Jailbreak Tax benchmark](#custom-jailbreaks)
