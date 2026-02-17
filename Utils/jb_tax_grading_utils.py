@@ -62,7 +62,11 @@ def grade_results(results_path: str, dataset: str) -> None:
 
         try:
             response_text = extract_response_text(response)
-            
+
+            if '</think>' in response_text:
+                response_text = response_text.split('</think>', 1)[1]
+                logging.info(f"Response text after removing thinking traces: {response_text}")
+
             # Get correctness based on dataset type
             if dataset.startswith('gsm8k'):
                 correctness = check_gsm8k_answer(response_text, result['correct_answer'])

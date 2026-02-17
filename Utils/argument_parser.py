@@ -13,6 +13,22 @@ def get_model_choices():
         "meta-llama/Llama-3.1-405B-Instruct",
         "anthropic/claude-3.5-sonnet",
         "anthropic/claude-3.5-haiku",
+        "Qwen/QwQ-32B",
+        "Qwen/Qwen3-32B",
+        "Qwen/Qwen3-8B",
+        "Qwen/Qwen3-14B",
+        "Qwen/Qwen3-4B",
+        "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5",
+        "nvidia/llama-3.3-nemotron-super-49b-v1",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+        "nvidia/OpenReasoning-Nemotron-32B",
+        "nvidia/OpenReasoning-Nemotron-14B",
+        "nvidia/OpenReasoning-Nemotron-7B",
+        "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        "kotekjedi/qwen3-32b-lora-jailbreak-detection-merged",
+        "kotekjedi/qwq3-32b-lora-jailbreak-detection-merged/qwq3-32b-lora-jailbreak-detection",
+        "huihui-ai/QwQ-32B-abliterated"
     ]
 
 def parse_args():
@@ -87,7 +103,7 @@ def add_attack_args(parser):
     attack_group.add_argument('--format_type', type=str, 
                             choices=['only_letter', 'as_gcg_target_string', 'as_top_2_answers',
                                    'as_gcg_target_string_only', 'as_gcg_target_string_with_explanation',
-                                   'start_with_explanation', 'start_with_resoning', 'detailed_resoning',
+                                   'start_with_explanation', 'start_with_resoning', 'detailed_resoning', 'reasoning',
                                    'auto_DAN_prompt', 'only_letter_plus_the_correct_answer_is',
                                    'only_number',
                                    'as_target_string',
@@ -111,7 +127,7 @@ def add_attack_args(parser):
                             default='check_if_correct_with_refusal',
                             help='Choose the format for judging responses')
     attack_group.add_argument('--system_prompt_type', type=str, 
-                            choices=['refuse_math', 'refuse_math_short', 'refuse_math_backup', 'dataset_specific', 'dataset_specific_backup', 'refuse_biology'],
+                            choices=['refuse_math', 'refuse_math_short', 'refuse_math_backup', 'dataset_specific', 'dataset_specific_backup', 'refuse_biology', 'refuse_math_for_reasoning_models', 'refuse_math_strong', 'system_prompt_gsm8k', 'deception_refuse', 'deception_refuse_updated', 'no_harmful_content', 'deception_refuse_harmful', 'empty_system_prompt'],
                             default='refuse_biology',
                             help='Choose the system prompt type')
 

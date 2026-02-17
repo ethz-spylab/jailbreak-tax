@@ -340,10 +340,17 @@ class BaseExperiment(ABC):
             if self.apply_alignment and self.config.alignment_method == 'fine_tuned':
                 logging.info(f"Alignment method is fine_tuned, loading aligned model from {self.config.alignment_model_path}")
                 # Load base model first
+                # Use bfloat16 for Nemotron models, float16 for others
+                if "nemotron" in self.config.select_model.lower():
+                    torch_dtype = torch.bfloat16
+                else:
+                    torch_dtype = torch.float16
+                    
                 base_model = AutoModelForCausalLM.from_pretrained(
                     self.config.select_model,
-                    torch_dtype=torch.float16,
-                    device_map="auto")
+                    torch_dtype=torch_dtype,
+                    device_map="auto",
+                    trust_remote_code=True)
             
                 # Load and merge LoRA weights
                 model = PeftModel.from_pretrained(
@@ -357,13 +364,46 @@ class BaseExperiment(ABC):
             else:
                 logging.info(f"Loading model from {self.config.select_model}")
                 # Standard model loading
-                model = AutoModelForCausalLM.from_pretrained(
-                    self.config.select_model,
-                    torch_dtype=torch.float16,
-                    device_map="auto"
-                )
+                # Use bfloat16 for Nemotron models, float16 for others
+                if "nemotron" in self.config.select_model.lower():
+                    torch_dtype = torch.bfloat16
+                else:
+                    torch_dtype = torch.float16
+                    
+                # Handle subfolder paths in model names
+                if "/" in self.config.select_model and self.config.select_model.count("/") > 1:
+                    # Split the path to get repo_id and subfolder
+                    parts = self.config.select_model.split("/")
+                    repo_id = "/".join(parts[:2])  # e.g., "kotekjedi/qwq3-32b-lora-jailbreak-detection-merged"
+                    subfolder = "/".join(parts[2:])  # e.g., "qwq3-32b-lora-jailbreak-detection"
+                    model = AutoModelForCausalLM.from_pretrained(
+                        repo_id,
+                        subfolder=subfolder,
+                        torch_dtype=torch_dtype,
+                        device_map="auto",
+                        trust_remote_code=True
+                    )
+                else:
+                    model = AutoModelForCausalLM.from_pretrained(
+                        self.config.select_model,
+                        torch_dtype=torch_dtype,
+                        device_map="auto",
+                        trust_remote_code=True
+                    )
             
-            tokenizer = AutoTokenizer.from_pretrained(self.config.select_model)
+            # Handle subfolder paths for tokenizer as well
+            if "/" in self.config.select_model and self.config.select_model.count("/") > 1:
+                # Split the path to get repo_id and subfolder
+                parts = self.config.select_model.split("/")
+                repo_id = "/".join(parts[:2])  # e.g., "kotekjedi/qwq3-32b-lora-jailbreak-detection-merged"
+                subfolder = "/".join(parts[2:])  # e.g., "qwq3-32b-lora-jailbreak-detection"
+                tokenizer = AutoTokenizer.from_pretrained(
+                    repo_id, 
+                    subfolder=subfolder, 
+                    trust_remote_code=True
+                )
+            else:
+                tokenizer = AutoTokenizer.from_pretrained(self.config.select_model, trust_remote_code=True)
             if tokenizer.pad_token is None:
                 tokenizer.pad_token = tokenizer.eos_token
                 model.config.pad_token_id = model.config.eos_token_id
